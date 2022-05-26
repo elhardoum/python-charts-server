@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  web:
+    image: elhardoum/fcgiwrap-server:latest
+    volumes:
+      - ./www:/var/www/html
+      - ./install-dependencies.sh:/var/opt/entrypoint-hook.sh
+      - ./requirements.txt:/tmp/requirements.txt
+    ports:
+      - 9000:80
